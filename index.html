@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro - Explore the Universe</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav-container">
+            <ul class="nav-left">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#tools">Tools</a></li>
+            </ul>
+            <div class="logo">ASTRO</div>
+            <ul class="nav-right">
+                <li><a href="#newsletter">Newsletter</a></li>
+                <li><a href="#following">Following</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <div class="home-text">
+                <h1>Discover the Cosmos</h1>
+                <p class="tagline">Embark on a journey through the stars</p>
+                <button class="explore-btn">Explore More</button>
+            </div>
+            <div class="planet-container">
+                <img src="images/earth.png" alt="Planet" class="planet active">
+                <img src="images/moon.png" alt="Planet" class="planet">
+                <img src="images/mars.png" alt="Planet" class="planet">
+                <img src="images/jupitor.png" alt="Planet" class="planet">
+                <img src="images/saturn.png" alt="Planet" class="planet">
+                <img src="images/pluto.png" alt="Planet" class="planet">
+                <img src="images/neptune.png" alt="Planet" class="planet">
+                <img src="images/murcury.png" alt="Planet" class="planet">
+                <img src="images/venus.png" alt="Planet" class="planet">
+                <img src="images/urenus.png" alt="Planet" class="planet">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section id="featured" class="featured-section">
+        <h2>Featured Content</h2>
+        <div class="featured-grid">
+            <div class="card">
+                <img src="images/milkeyway.jpg" alt="Milky Way">
+                <h3>How to Photograph the Milky Way</h3>
+                <p>Learn the best techniques to capture stunning night sky images.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <div class="card">
+                <img src="images/teles.webp" alt="Telescope">
+                <h3>Top Telescopes for Beginners</h3>
+                <p>Explore our guide to choosing the perfect telescope for stargazing.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <div class="card">
+                <img src="images/stars.jpg" alt="Stars">
+                <h3>Guide to Stargazing</h3>
+                <p>Discover the best spots and tips for an unforgettable experience.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <button class="view-all-btn">View All</button>
+    </section>
+
+    <!-- Tools Section (Rewritten to Fix Button Issues) -->
+    <section id="tools" class="tools-section">
+        <h2>Advanced Stargazing Tools</h2>
+        <div class="tools-grid">
+            <div class="tool-card" data-tool="moon-phase" aria-label="Moon Phase Calculator Tool">
+                <div class="tool-inner">
+                    <div class="tool-front">
+                        <div class="tool-content">
+                            <h3>Moon Phase Calculator</h3>
+                            <p>Find the moon phase for any date to plan your stargazing.</p>
+                            <button class="tool-activate-btn" aria-label="Launch Moon Phase Calculator">Launch Tool</button>
+                        </div>
+                    </div>
+                    <div class="tool-back">
+                        <div class="tool-content">
+                            <h3>Moon Phase</h3>
+                            <input type="date" id="moon-phase-date" aria-label="Select date for moon phase" required>
+                            <button class="tool-action-btn" data-action="calculate-moon-phase" aria-label="Calculate Moon Phase">Calculate</button>
+                            <p id="moon-phase-result" aria-live="polite">Result will appear here.</p>
+                            <div id="moon-phase-visual" aria-hidden="true"></div>
+                            <button class="tool-close-btn" aria-label="Close Moon Phase Calculator">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-card" data-tool="light-pollution" aria-label="Light Pollution Map Tool">
+                <div class="tool-inner">
+                    <div class="tool-front">
+                        <div class="tool-content">
+                            <h3>Light Pollution Map</h3>
+                            <p>Locate dark skies for the best stargazing experience.</p>
+                            <button class="tool-activate-btn" aria-label="Launch Light Pollution Map">Launch Tool</button>
+                        </div>
+                    </div>
+                    <div class="tool-back">
+                        <div class="tool-content">
+                            <h3>Light Pollution Map</h3>
+                            <iframe src="https://www.lightpollutionmap.info" title="Light Pollution Map" loading="lazy"></iframe>
+                            <a href="https://www.lightpollutionmap.info" target="_blank" aria-label="Open Light Pollution Map in new tab">Open Full Map</a>
+                            <button class="tool-close-btn" aria-label="Close Light Pollution Map">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-card" data-tool="nasa-apod" aria-label="NASA APOD Tool">
+                <div class="tool-inner">
+                    <div class="tool-front">
+                        <div class="tool-content">
+                            <h3>NASA APOD</h3>
+                            <p>Explore NASA's Astronomy Picture of the Day.</p>
+                            <button class="tool-activate-btn" aria-label="Launch NASA APOD">Launch Tool</button>
+                        </div>
+                    </div>
+                    <div class="tool-back">
+                        <div class="tool-content">
+                            <h3>NASA APOD</h3>
+                            <button class="tool-action-btn" data-action="fetch-nasa-apod" aria-label="Load NASA Picture of the Day">Load Image</button>
+                            <div id="nasa-apod-content" aria-live="polite"></div>
+                            <button class="tool-close-btn" aria-label="Close NASA APOD">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-card" data-tool="sky-events" aria-label="Monthly Sky Events Tool">
+                <div class="tool-inner">
+                    <div class="tool-front">
+                        <div class="tool-content">
+                            <h3>Monthly Sky Events</h3>
+                            <p>Stay updated with upcoming celestial events.</p>
+                            <button class="tool-activate-btn" aria-label="Launch Monthly Sky Events">Launch Tool</button>
+                        </div>
+                    </div>
+                    <div class="tool-back">
+                        <div class="tool-content">
+                            <h3>Sky Events</h3>
+                            <p>Download our celestial events guide.</p>
+                            <a href="#" class="tool-action-btn" data-action="download-sky-events" aria-label="Download Sky Events PDF">Download PDF</a>
+                            <button class="tool-close-btn" aria-label="Close Monthly Sky Events">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter-section">
+        <div class="newsletter-content">
+            <div class="newsletter-left">
+                <h2>Join Our Space Community</h2>
+                <p>Get weekly space updates and exclusive content!</p><br>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="subscribe-btn">Subscribe</button>
+                </form>
+            </div>
+            <div class="newsletter-right">
+                <div class="social-icons">
+                    <a href="#"><img src="images/tweet.png" alt="Twitter"></a>
+                    <a href="#"><img src="images/inster.png" alt="Instagram"></a>
+                    <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="images/tred.png" alt="Thread"></a>
+                    <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                    <a href="#"><img src="images/tiktok.png" alt="Tiktok"></a>
+                    <a href="#"><img src="images/reddit.png" alt="Reddit"></a>
+                </div>
+                <div class="fun-fact">
+                    <p>Did you know? A day on Venus is longer than its year!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Following Section -->
+    <section id="following" class="following-section">
+        <h2>Our Partners</h2>
+        <div class="logos">
+            <a href="https://www.nasa.gov" target="_blank"><img src="images/nasa.png" alt="NASA"></a>
+            <a href="https://www.spacex.com" target="_blank"><img src="images/spacex.png" alt="SpaceX"></a>
+            <a href="https://www.roscosmos.ru" target="_blank"><img src="images/roscosmos.png" alt="Roscosmos"></a>
+            <a href="https://www.esa.int" target="_blank"><img src="images/esa.png" alt="ESA"></a>
+            <a href="https://www.cnsa.gov.cn" target="_blank"><img src="images/cns.png" alt="CNSA"></a>
+            <a href="https://www.isro.gov.in" target="_blank"><img src="images/isro.png" alt="ISRO"></a>
+            <a href="https://www.jaxa.jp" target="_blank"><img src="images/jaxa.png" alt="JAXA"></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <div class="about-left">
+                <h2>Our Vision</h2>
+                <p>We aim to inspire and educate people about the wonders of the universe, making astronomy accessible to everyone.</p>
+            </div>
+            <div class="about-right">
+                <h2>Join With Us</h2>
+                <form class="join-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="join-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>© 2025 Astro. All Rights Reserved.</p>
+        <p>Designed by Shivantha Deneth</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
